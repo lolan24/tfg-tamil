@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ml" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoFap 21 Days | Time for Greatness</title>
+    <!-- SEO meta tags -->
+    <meta name="description" content="Time for Greatness - NoFap 21 Days Course. Reclaim your life with our 100% practical blueprint.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0f172a',
+                            card: '#1e293b',
+                            gold: '#facc15',
+                            green1: '#10b981',
+                            green2: '#0d9488',
+                        }
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Custom CSS -->
+    <style>
+        body { 
+            background-color: #0f172a; 
+            color: #f8fafc; 
+        }
+        
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, #10b981, #0d9488);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn-primary:hover::after {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.4), 0 8px 10px -6px rgba(16, 185, 129, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Reveal Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Delay utilities */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden relative">
+    
+    <!-- Background Glow Effects -->
+    <div class="fixed top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
+        <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/20 rounded-full blur-[120px]"></div>
+        <div class="absolute top-[40%] right-[-10%] w-[30%] h-[50%] bg-emerald-600/10 rounded-full blur-[120px]"></div>
+    </div>
+
+    <!-- Navigation -->
+    <header id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 py-4">
+        <div class="container mx-auto px-6 md:px-12 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold tracking-tight z-50 relative group">
+                <span class="text-brand-gold transition-colors duration-300 group-hover:text-yellow-300">Time</span>
+                <span class="text-white">for</span>
+                <span class="text-red-500 transition-colors duration-300 group-hover:text-red-400">Greatness</span>
+            </a>
+            
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex space-x-8 items-center text-sm font-medium">
+                <a href="index.html" class="text-gray-300 hover:text-white transition-colors duration-200">Home</a>
+                <a href="index.html" class="text-gray-300 hover:text-white transition-colors duration-200">About</a>
+                <a href="#course" class="text-white font-semibold transition-colors duration-200">Courses</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition-colors duration-200">Contact</a>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white z-50 relative p-2" aria-label="Toggle menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-brand-dark/95 backdrop-blur-md flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-300 z-40">
+            <nav class="flex flex-col space-y-8 items-center text-xl font-medium">
+                <a href="#" class="text-gray-300 hover:text-white transition-colors">Home</a>
+                <a href="#" class="text-gray-300 hover:text-white transition-colors">About</a>
+                <a href="#course" class="text-white font-semibold transition-colors">Courses</a>
+                <a href="#contact" class="text-gray-300 hover:text-white transition-colors">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 md:pt-40 md:pb-32 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-center text-white mb-16 reveal tracking-tight">
+                நோஃபேப் <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-500">21 நாட்கள்</span>
+            </h1>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                <!-- Video Embedding Area -->
+                <div class="w-full aspect-video rounded-2xl overflow-hidden shadow-2xl relative group reveal delay-100 glass-card">
+                    <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/4MindxdHcNM?si=8Xrdr2VoaIxeIl82" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <!-- Text Content Box -->
+                <div class="glass-card rounded-2xl p-8 md:p-10 shadow-xl reveal delay-200 flex flex-col justify-center border-t border-slate-700/50 hover:-translate-y-1 transition-transform duration-500">
+                    <p class="text-gray-300 text-lg md:text-xl leading-relaxed mb-6 font-medium">
+                        இது பண நோக்கத்தில் உருவாக்கப்பட்ட பாடநெறி அல்ல; உங்களின் பணம் எனக்கு முக்கியமல்ல
+                    </p>
+                    <p class="text-brand-gold text-2xl font-bold mb-6 tracking-wide drop-shadow-sm">
+                        Trust me...
+                    </p>
+                    <p class="text-gray-300 text-base md:text-lg leading-relaxed mb-6">
+                        நான் உங்களை பார்த்ததுமில்லை, பேசித்ததுமில்லை என்றாலும், உங்களை நான் புரிந்துகொள்கிறேன்
+                    </p>
+                    <p class="text-gray-400 text-sm md:text-base leading-relaxed">
+                        பல ஆண்டுகளாக நீங்கள் எதிர்கொண்டு வரும் சவால்களில் இருந்து வெளிவர உதவும் நிரூபிக்கப்பட்ட வழிகாட்டுதலை நான் வழங்குகிறேன் 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-slate-900/50 relative border-y border-slate-800">
+        <div class="container mx-auto max-w-5xl px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-16 reveal">
+                இந்தப் பாடநெறியை தனித்துவமாக்கும் அம்சங்கள் என்ன?
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                <!-- Feature Items Array -->
+                <div class="glass-card p-6 rounded-xl flex items-start space-x-4 reveal hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="flex-shrink-0 mt-1 bg-yellow-400/10 p-2 rounded-lg group-hover:bg-yellow-400/20 transition-colors">
+                        <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                        <p class="text-gray-300font-medium leading-relaxed">தேசிய விருது பெற்ற உயர்தர பாடநெறி</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl flex items-start space-x-4 reveal delay-100 hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="flex-shrink-0 mt-1 bg-yellow-400/10 p-2 rounded-lg group-hover:bg-yellow-400/20 transition-colors">
+                        <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                        <p class="text-gray-300 font-medium leading-relaxed">YouTube வீடியோக்களைப் போல அல்ல; இது 100% செய்முறை அடிப்படையிலான பாடநெறி</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl flex items-start space-x-4 reveal delay-200 hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="flex-shrink-0 mt-1 bg-yellow-400/10 p-2 rounded-lg group-hover:bg-yellow-400/20 transition-colors">
+                        <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                        <p class="text-gray-300 font-medium leading-relaxed">5 ஆண்டுகளாக ‘NoFap’ வாழ்க்கை முறையைப் பயின்ற 3000-க்கும் மேற்பட்ட நபர்களின் அனுபவத்தை அடிப்படையாகக் கொண்டு வடிவமைக்கப்பட்டது
+</p>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl flex items-start space-x-4 reveal delay-300 hover:-translate-y-1 transition-all duration-300 group">
+                    <div class="flex-shrink-0 mt-1 bg-yellow-400/10 p-2 rounded-lg group-hover:bg-yellow-400/20 transition-colors">
+                        <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                    </div>
+                    <div>
+                        <p class="text-gray-300 font-medium leading-relaxed">உலகின் எந்த நாட்டில் இருந்தாலும், நீங்கள் திறம்பட கற்றுக்கொள்ளும் வகையில் இந்தப் பாடநெறி வடிவமைக்கப்பட்டுள்ளது  </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="py-24 px-6">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-16 reveal">
+                21 நாட்களுக்கு பிறகு
+            </h2>
+            
+            <div class="glass-card rounded-2xl p-8 md:p-12 text-left shadow-2xl reveal delay-100 border border-emerald-900/30 relative overflow-hidden">
+                <!-- Decorative glow inside card -->
+                <div class="absolute -top-24 -right-24 w-48 h-48 bg-emerald-600/20 rounded-full blur-3xl"></div>
+                
+                <ul class="space-y-6 relative z-10">
+                    <li class="flex items-center space-x-4 p-2 rounded-lg hover:bg-white/5 transition-colors">
+                        <div class="bg-emerald-500/20 p-1.5 rounded-full text-emerald-400">
+                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <span class="text-gray-200 text-lg">பெண்ணின் பின்னால் போகும் வாழ்க்கையை விட்டுவிட்டு இலக்கை நோக்கி பயணம் செய்வீர்கள்</span>
+                    </li>
+                    <li class="flex items-center space-x-4 p-2 rounded-lg hover:bg-white/5 transition-colors">
+                        <div class="bg-emerald-500/20 p-1.5 rounded-full text-emerald-400">
+                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <span class="text-gray-200 text-lg">***பல ஆண்டுகளாக வேட்டையாடப்பட்டு வரும் குற்ற உணர்விலிருந்து விடுபடலாம்</span>
+                    </li>
+                    <li class="flex items-center space-x-4 p-2 rounded-lg hover:bg-white/5 transition-colors">
+                        <div class="bg-emerald-500/20 p-1.5 rounded-full text-emerald-400">
+                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <span class="text-gray-200 text-lg">பெண்களுடனும் சமூகத்துடனும் தன்னம்பிக்கையுடன் தலை உயர்த்தி நடக்கலாம்</span>
+                    </li>
+                    <li class="flex items-center space-x-4 p-2 rounded-lg hover:bg-white/5 transition-colors">
+                        <div class="bg-emerald-500/20 p-1.5 rounded-full text-emerald-400">
+                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <span class="text-gray-200 text-lg">சரியான தைரியமும் மரியாதையும் என்னவென்று கற்றுக் கொள்வீர்கள்</span>
+                    </li>
+                    <li class="flex items-center space-x-4 p-2 rounded-lg hover:bg-white/5 transition-colors">
+                        <div class="bg-emerald-500/20 p-1.5 rounded-full text-emerald-400">
+                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                        </div>
+                        <span class="text-gray-200 text-lg">இன்றைக்கும் அனுபவிக்கும் தனிமை எப்படி ஒரு ஆற்றலாக மாற்றலாம் என்று கற்றுக் கொள்வீர்கள்</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing & CTA Section -->
+    <section id="course" class="py-20 bg-gradient-to-b from-transparent to-slate-900 px-6 border-t border-slate-800">
+        <div class="container mx-auto max-w-4xl text-center">
+            
+            <div class="mb-12 reveal">
+                <h3 class="text-3xl font-bold text-white mb-8">எதனால் இதற்கு 6000👇🏼</h3>
+                <!-- Secondary Video to Build Value -->
+                 <div class="w-full max-w-2xl mx-auto aspect-video rounded-xl overflow-hidden shadow-xl relative group mb-12 glass-card">
+                    <iframe class="absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/9zme5ERz8fk?si=FL7r3wnzjdLia80q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div class="glass-card rounded-3xl p-10 md:p-16 max-w-2xl mx-auto shadow-2xl reveal delay-100 relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4">
+                    <span class="bg-red-500/20 text-red-400 text-xs font-bold px-3 py-1 rounded-full border border-red-500/30">Limited Offer</span>
+                </div>
+                
+                <h3 class="text-2xl font-bold text-gray-200 mb-6 tracking-wide">இப்போது தான் JOIN செய்யு 👇</h3>
+                <div class="flex items-center justify-center space-x-4 mb-8">
+                    <span class="text-3xl font-medium text-gray-500 line-through">₹9999</span>
+                    <span class="text-5xl font-extrabold text-white">₹6000</span>
+                </div>
+                
+                <a href="https://superprofile.bio/course/445b0f4b-ba0a-49e2-bf92-631a0bfe9609" target="_blank" class="btn-primary inline-block w-full py-5 rounded-xl text-white font-bold text-xl shadow-lg hover:shadow-emerald-500/25 uppercase tracking-wide">
+                    Enroll Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-24 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-white mb-16 reveal">
+                What Our Students Say
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="glass-card p-8 rounded-2xl reveal hover:-translate-y-2 transition-transform duration-300 border-t border-slate-700">
+                    <div class="flex items-center space-x-1 mb-6">
+                        <svg class="w-8 h-8 text-brand-gold opacity-80" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
+                    </div>
+                    <p class="text-gray-300 mb-8 text-sm md:text-base leading-relaxed">
+                        12 வருடங்களாக கர்த்தரில் வசித்து வருகிறேன் எனக்கு மதுப்பழக்கம் புகைப்பழக்கம் எதுவும் எனக்கு இல்லை ஆனால் இந்த பழக்கத்திலிருந்து மட்டும் வெளி வருவதற்கு இயலவில்லை அதனால் இந்தப் பாடப்பிரிவில் சேர்ந்தேன் இன்ஷா அல்லாஹ் இன்று 46 வது நாள் மிக்க நன்றியும் கடமையும் இருக்கும் .
+                    </p>
+                    <div class="flex items-center">
+                        <div class="flex text-brand-gold text-xs">★★★★★ <br>முகம்மது ஹர்ஷத்</div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="glass-card p-8 rounded-2xl reveal delay-100 hover:-translate-y-2 transition-transform duration-300 border-t border-slate-700">
+                    <div class="flex items-center space-x-1 mb-6">
+                        <svg class="w-8 h-8 text-brand-gold opacity-80" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
+                    </div>
+                    <p class="text-gray-300 mb-8 text-sm md:text-base leading-relaxed">
+                       எர்ணாகுளத்தில் நான் காணாத சைக்காலஜிஸ்ட் இல்லை போகாத அடிமை மையங்கள் இல்லை நான் பார்த்த எந்த சைக்காலஜிஸ்ட் மாற்றி அமைக்க முடியாத ஒன்றை akshay broo இந்த படத்தின் மூலம் மாற்றி தந்தார் எப்படி நன்றி சொல்வது  என்று தெரியவில்லை broo
+                    </p>
+                    <div class="flex items-center mt-auto">
+                        <div class="flex text-brand-gold text-xs">★★★★★ <br>அப்துல் கபூர்</div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="glass-card p-8 rounded-2xl reveal delay-200 hover:-translate-y-2 transition-transform duration-300 border-t border-slate-700">
+                    <div class="flex items-center space-x-1 mb-6">
+                        <svg class="w-8 h-8 text-brand-gold opacity-80" fill="currentColor" viewBox="0 0 24 24"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" /></svg>
+                    </div>
+                    <p class="text-gray-300 mb-8 text-sm md:text-base leading-relaxed">
+                       இரவில் ஒரு இரவு கூட இதை செய்யாமல் தூங்க முடியாமல் கஷ்டப்பட்டேன் எத்தனை மணியாக இருந்தாலும் விடிய காலைல 3 மணி ஆக இருந்தாலும் சரி இப்ப எதுவும் இல்லாமல் எனக்கு என்னை புரிய  வைக்க முடிந்தது உங்களுக்கு எப்படி என்று தெரியவில்லை ஆனால் எனக்கு ஆசைப்பட்ட வாழ்க்கை கிடைத்தது 
+
+                    </p>
+                    <div class="flex items-center mt-auto">
+                        <div class="flex text-brand-gold text-xs">★★★★★ <br> அருண் முரளி</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-black/40 border-t border-slate-800 pt-16 pb-8 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <div class="mb-12 text-center md:text-left">
+                <a href="#" class="inline-block text-2xl font-bold tracking-tight mb-6">
+                    <span class="text-brand-gold">Time</span> <span class="text-white">for</span> <span class="text-red-500">Greatness</span>
+                </a>
+                <p class="text-gray-300 text-lg font-semibold mb-6">
+                    இலவச வீடியோக்கள் பெற எங்கள் சேனல்களை Subscribe செய்யவும்
+                </p>
+            </div>
+
+            <div class="w-full max-w-5xl mx-auto mb-16 px-2 md:px-0">
+                <!-- Social Channels Block -->
+                <div class="glass-card p-8 md:p-10 rounded-2xl border border-slate-700 bg-[#121212]/80">
+                    <h3 class="text-center text-white text-2xl md:text-3xl font-bold mb-10 tracking-wide">
+                        இலவச வீடியோக்களைப் பெற எங்கள் சேனல்களை சப்ஸ்கிரைப் செய்யுங்கள்.
+                    </h3>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        
+                        <!-- Box 1: Instagram -->
+                        <div class="bg-[#1e1e1e] p-5 sm:p-6 rounded-xl border border-slate-700/50 flex items-center space-x-4 sm:space-x-6 hover:bg-[#252525] transition-colors relative">
+                            <!-- Left Circle Area -->
+                            <div class="w-16 h-16 sm:w-[72px] sm:h-[72px] rounded-full border-[1.5px] border-gray-600 flex-shrink-0 flex items-center justify-center text-center bg-[#1e1e1e]">
+                                <svg class="w-8 h-8 sm:w-9 sm:h-9 text-[#e1306c]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg> 
+                            </div>
+                            
+                            <!-- Content Area -->
+                            <div class="flex flex-col">
+                                <h4 class="text-white font-bold text-[17px] tracking-wide mb-3">Instagram</h4>
+                                <div class="mt-1">
+                                    <a href="https://www.instagram.com/mindset_with_akshay?igsh=MXY0ZnFsY3RqMW54eA==" target="_blank" class="bg-[#e1306c] hover:bg-[#c13584] text-white py-1.5 px-6 rounded-full text-xs font-semibold inline-flex items-center justify-center transition-colors shadow-md w-max">
+                                        Follow
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Box 2: YouTube -->
+                        <div class="bg-[#1e1e1e] p-5 sm:p-6 rounded-xl border border-slate-700/50 flex items-center space-x-4 sm:space-x-6 hover:bg-[#252525] transition-colors relative">
+                            <!-- Left Circle Area -->
+                            <div class="w-16 h-16 sm:w-[72px] sm:h-[72px] rounded-full border-[1.5px] border-gray-600 flex-shrink-0 flex items-center justify-center text-center bg-[#1e1e1e]">
+                                <svg class="w-8 h-8 sm:w-9 sm:h-9 text-[#ff0000]" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                            </div>
+                            
+                            <!-- Content Area -->
+                            <div class="flex flex-col">
+                                <h4 class="text-white font-bold text-[17px] tracking-wide mb-3">YouTube</h4>
+                                <div class="mt-1">
+                                    <a href="https://www.youtube.com/@keralathambiakshay" target="_blank" class="bg-[#ff0000] hover:bg-[#cc0000] text-white py-1.5 px-6 rounded-full text-xs font-semibold inline-flex items-center justify-center transition-colors shadow-md w-max">
+                                        Subscribe
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Contact Details Block -->
+                <div class="glass-card p-6 md:p-10 rounded-2xl border border-slate-700 max-w-3xl mx-auto flex flex-col items-center text-center mt-12 bg-black/20">
+                    <h4 class="text-white font-semibold mb-6 text-2xl border-b border-slate-700/50 pb-4 w-full">Contact Details</h4>
+                    
+                    <ul class="text-base text-gray-400 space-y-4 flex flex-col items-center w-full">
+                        <li><span class="text-gray-300">Email:</span> <a href="mailto:timeforgreatness07@gmail.com" class="hover:text-emerald-400 transition-colors">timeforgreatness07@gmail.com</a></li>
+                        <li><span class="text-gray-300">Phone:</span> <a href="tel:+916282108650" class="hover:text-emerald-400 transition-colors">+91 6282108650</a></li>
+                        <li class="pt-2"><strong class="text-gray-300">TFG ENTERPRISES PRIVATE LIMITED</strong></li>
+                        <li><span class="text-gray-300">CIN:</span> U85499KL2023PTC084615</li>
+                        <li class="leading-relaxed max-w-sm">No.374, SIVANILAYAM, PUTHANPATHA, Nattukal, Chittur, Palakkad - 678554, Kerala</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500">
+                <p>&copy; 2026 Time for Greatness. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-gray-300 transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-gray-300 transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- External Script JS -->
+    <script src="./script.js"></script>
+</body>
+</html>
